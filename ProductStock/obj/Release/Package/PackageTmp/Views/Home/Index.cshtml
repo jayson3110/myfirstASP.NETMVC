@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ProductStock.Models.Product>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="@Url.Content("~/Content/ProductStyle.css")" rel="stylesheet" type="text/css" />
+    <style>
+        #createNew {
+            padding-left: 178px;
+        }
+    </style>
+</head>
+<body>
+    @{Html.RenderAction("TemplateProduct", "Home"); } 
+
+    <h3 id="createNew">@Html.ActionLink("Create new product", "Create")</h3>
+
+    <div class="cardContainer">
+
+        @foreach (var item in Model)
+        {
+
+           
+
+
+                <div class="card">
+                    <div class="container">
+                        <h4>
+                            @Html.DisplayFor(modelItem => item.NameOfProduct)
+                        </h4>
+                        <p> @Html.DisplayFor(modelItem => item.Description) </p>
+
+                        <p>@Html.DisplayFor(modelItem => item.InStock)</p>
+
+                        <button class="buttonStyle">@Html.ActionLink("Edit", "Edit", new { id = item.ID }) </button>
+                    </div>
+                </div>
+         
+
+
+        }
+    </div>
+
+
+
+
+</body>
+</html>
