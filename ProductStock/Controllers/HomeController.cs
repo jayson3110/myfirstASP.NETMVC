@@ -11,6 +11,7 @@ namespace ProductStock.Controllers
     {
         // GET: Home
         private ProductDBContext db = new ProductDBContext();
+        [OutputCache(Duration = 600)]
         public ActionResult Index()
         {
             var product = from e in db.Products

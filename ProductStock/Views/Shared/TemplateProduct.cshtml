@@ -40,9 +40,15 @@
         .header {
             /*background-color: #f1f1f1;*/
 
-            padding: 90px;
-            padding-bottom: 20px;
+            position: relative;
             text-align: center;
+            color: white;
+        }
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         #header-h1 {
@@ -115,8 +121,14 @@
     </div>
 
     <div class="header">
-        <h1 id="header-h1"> ASP.NET MVC</h1>
-        <p>Iam Jayson and this is my first ASP.NET MVC project</p>
+        <img class="full-image" src="https://images.unsplash.com/photo-1458324124043-7803d4fec380?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=df280ed170d2a9e25506f2d3db42f4f9" alt="">
+        <div class="centered">
+            <h1 id="header-h1"> ASP.NET MVC</h1>
+            <p>Iam Jayson and this is my first ASP.NET MVC project</p>
+
+        </div>
+        
+
     </div>
 
     <div id="StyleLink">
