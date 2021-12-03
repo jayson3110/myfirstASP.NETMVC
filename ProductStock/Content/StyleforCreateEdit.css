@@ -1,27 +1,19 @@
-﻿.form-horizontal {
-
-    padding-top: 100px;
-    padding-left: 200px;
+﻿.main {
+    margin-left: 400px;
+    
 }
 
-.form-control {
-    width: 34%;
+.form {
+    font-size: 22px;
+    float: left;
+}
+
+input[type=text] {
+    width: 200%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-}
-.btnStyle {
-    background-color: #e7e7e7;
-    border: none;
-    color: black;
-    padding: 12px 22px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 2px;
-    cursor: pointer;
 }

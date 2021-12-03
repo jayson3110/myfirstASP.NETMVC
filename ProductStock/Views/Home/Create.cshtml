@@ -17,59 +17,76 @@
     @Scripts.Render("~/bundles/jqueryval")
 
 
-    @{Html.RenderAction("TemplateProduct", "Home"); }
+    @{Html.RenderAction("InventoryStatus", "Home"); }
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+    <div class="main">
+        <h1>Product Detail</h1>
+        <h3>Product</h3>
 
-    <div class="form-horizontal">
+        <hr style="width: 60%" />
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.NameOfProduct, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NameOfProduct, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NameOfProduct, "", new { @class = "text-danger" })
-            </div>
+
+
+        <div class="form">
+            @using (Html.BeginForm())
+            {
+
+                @Html.AntiForgeryToken()
+
+                <div class="">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.NameOfProduct, htmlAttributes: new { @class = "" })
+                        <div class="">
+                            @Html.EditorFor(model => model.NameOfProduct, new { htmlAttributes = new { @class = "" } })
+                            @Html.ValidationMessageFor(model => model.NameOfProduct, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "" })
+                        <div class="">
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "" } })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="">
+                        @Html.LabelFor(model => model.InStock, htmlAttributes: new { @class = "" })
+                        <div class="">
+                            @Html.EditorFor(model => model.InStock, new { htmlAttributes = new { @class = "" } })
+                            @Html.ValidationMessageFor(model => model.InStock, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="">
+                        @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "" })
+                        <div class="">
+                            @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "" } })
+                            @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="">
+                        <div class="">
+                            <input type="submit" value="Save" class="btnStyle btn-default" />
+                        </div>
+                    </div>
+
+                    <br />
+                    <div>
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                    <hr />
+                </div>
+            }
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.InStock, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.InStock, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.InStock, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btnStyle btn-default" />
-            </div>
-        </div>
-        <br />
-        <div>
-            @Html.ActionLink("Back to List", "Index")
-        </div>
     </div>
-    }
-
   
 </body>
 </html>

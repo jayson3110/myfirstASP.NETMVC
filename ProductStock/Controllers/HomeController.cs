@@ -119,5 +119,13 @@ namespace ProductStock.Controllers
             
         }
 
+        [ChildActionOnly]
+        public ActionResult InventoryStatus()
+        {
+            return PartialView("_Layout");
+
+        }
+
+
     }
 }

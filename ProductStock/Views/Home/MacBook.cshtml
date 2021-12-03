@@ -13,33 +13,57 @@
     <link href="@Url.Content("~/Content/ProductStyle.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    
-        @{Html.RenderAction("TemplateProduct", "Home"); }
-    
-    <div class="cardContainer">
+    @{Html.RenderAction("TemplateProduct", "Home"); }
+    <div class="main">
+      
+        <br/>
+        <div class="cardContainer">
 
-        @foreach (var item in Model)
-        {
+            @foreach (var item in Model)
+            {
 
 
 
 
-            <div class="card">
-                <div class="container">
-                    <h4>
-                        @Html.DisplayFor(modelItem => item.NameOfProduct)
-                    </h4>
-                    <p> @Html.DisplayFor(modelItem => item.Description) </p>
+                <div class="card">
+                    <div class="container">
+                        <h3>
+                            <b> @Html.DisplayFor(modelItem => item.NameOfProduct) </b>
 
-                    <p>@Html.DisplayFor(modelItem => item.InStock)</p>
+                            <span style="float: left; position: absolute; left: 500px; background-color: #5035FF; padding: 5px; border-radius: 5px; color: white; font-size: 20px; ">
+                                @Html.DisplayFor(modelItem => item.InStock)
+                            </span>
 
-                    <button class="buttonStyle">@Html.ActionLink("Edit", "Edit", new { id = item.ID }) </button>
+                        </h3>
+
+                        <br />
+
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Description)
+
+
+
+                            <span style="float: left; position: absolute; left: 500px; ">
+                                <button class="buttonStyle">@Html.ActionLink("Edit", "Edit", new { id = item.ID }) </button>
+                            </span>
+
+
+                        </p>
+
+
+
+
+                    </div>
                 </div>
-            </div>
+
+                <br />
 
 
 
-        }
+            }
+        </div>
+    </div>
+
     </div>
 </body>
 </html>
